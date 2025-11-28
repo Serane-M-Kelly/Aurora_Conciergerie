@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Conciergerie - Abidjan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="images/Logo_Aurora.png"
+              alt="Logo Aurora Conciergerie"
+              width="200"
+          /></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about">Qui sommes-nous</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact" class="btn-nav">Nous contacter</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="container hero-content">
+        <h1 class="fade-in">Avec Aurora, <br />Sublimez votre quotidien.</h1>
+        <p class="subtitle fade-in-delay">
+          Notre promesse : Discrétion, excellence et service personnalisé.<br />Aurora,
+          votre luxe au quotidien !
+        </p>
+        <a href="#contact" class="btn-primary fade-in-delay-2"
+          >Découvrir l'excellence</a
+        >
+      </div>
+    </header>
+
+    <!-- QUI SOMMES NOUS -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>L'Art de Vivre par Aurora</h2>
+            <p>Aurora, c’est bien plus qu’une simple conciergerie.</p>
+            <p>
+              Basée à <strong>Abidjan</strong>, notre mission est de sublimer
+              votre quotidien en vous offrant un accompagnement sur mesure,
+              raffiné, discret et haut de gamme.
+            </p>
+            <p>
+              Nous prenons soin de chaque détail pour que vous n’ayez à penser à
+              rien sauf à profiter.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="images/image.jpg" alt="Image Elegante" width="500" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POURQUOI CHOISIR AURORA (SERVICES) -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2 class="section-title">Pourquoi choisir Aurora ?</h2>
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="icon">✨</div>
+            <h3>Expériences Personnalisées</h3>
+            <p>
+              Êtes-vous à la recherche d’expériences uniques et sur mesure ?
+              Nous proposons des services à la carte en fonction de vos goûts et
+              de vos besoins.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="icon">🌿</div>
+            <h3>Bien-être & Santé</h3>
+            <p>
+              Le bien-être est notre priorité. Yoga, massages, nutritionnistes
+              ou planification de "spring breaks" relaxants : nous prenons soin
+              de votre santé mentale et physique.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="icon">🎨</div>
+            <h3>Art & Culture</h3>
+            <p>
+              Envie d'enrichissement ? Nous organisons vos visites de musées,
+              expositions d'art ou réservations de concerts et restaurants, peu
+              importe le pays.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="icon">🤝</div>
+            <h3>Soutenabilité & Éthique</h3>
+            <p>
+              Aurora opère de manière éthique, respectant les droits humains et
+              le développement durable. Transparence et responsabilité sont au
+              cœur de nos actions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Prêt à vivre l'expérience Aurora ?</h2>
+        <div class="contact-wrapper">
+          <div class="contact-content">
+            <p>Contactez-nous pour une consultation personnalisée.</p>
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <span>📞</span> +225 07 97 50 35 10
+              </div>
+              <div class="contact-item">
+                <span>📍</span> Abidjan, Côte d’Ivoire
+              </div>
+            </div>
+
+            <a href="https://wa.me/2250797503510" class="btn-primary"
+              >Discuter sur WhatsApp</a
+            >
+          </div>
+
+          <div class="qr-code-container">
+            <img
+              src="images/QR_Aurora.png"
+              alt="QR Code Aurora"
+              class="qr-code"
+            />
+            <p class="qr-label">Scannez pour nous ajouter</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Aurora Conciergerie. Based in Abidjan.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar Scroll Effect
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile Menu Toggle
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav-links");
+      const navLinks = document.querySelectorAll(".nav-links li");
+
+      burger.addEventListener("click", () => {
+        // Toggle Nav
+        nav.classList.toggle("nav-active");
+
+        // Burger Animation
+        burger.classList.toggle("toggle");
+      });
+
+      // Close menu when clicking a link
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("nav-active");
+          burger.classList.remove("toggle");
+        });
+      });
+    </script>
+  </body>
+</html>
