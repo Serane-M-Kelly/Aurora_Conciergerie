@@ -1,0 +1,448 @@
+/* --- VARIABLES & RESET --- */
+:root {
+  /* Palette Aurora Luxury */
+  --color-background: #f9f5f0; /* Crème Alabaster */
+  --color-background-alt: #e6dbc9; /* Champagne */
+  --color-text-main: #2e1a16; /* Espresso Intense */
+  --color-text-muted: #5d4b47; /* Version allégée */
+  --color-accent: #b88a57; /* Bronze Doré */
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-heading: "Playfair Display", serif; /* Ou 'Cinzel' pour le logo */
+  --font-body: "Lato", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 15px 35px;
+  border-radius: 2px; /* Légèrement arrondi mais chic */
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  padding: 20px 0;
+  position: fixed; /* Changed from absolute to fixed */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Increased z-index to ensure it stays on top */
+  transition: all 0.3s ease; /* Smooth transition for background and padding */
+}
+
+.navbar.scrolled {
+  background-color: rgba(
+    249,
+    245,
+    240,
+    0.9
+  ); /* var(--color-background) with opacity */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  padding: 10px 0; /* Slightly smaller padding on scroll */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Cinzel", serif; /* Rappel du logo carte de visite */
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--color-text-main);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links li a {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links li a:hover {
+  color: var(--color-accent);
+}
+
+.btn-nav {
+  border: 1px solid var(--color-text-main);
+  padding: 8px 20px;
+  border-radius: 2px;
+}
+
+.btn-nav:hover {
+  background-color: var(--color-text-main);
+  color: var(--color-background);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(
+    circle at center,
+    var(--color-background) 0%,
+    var(--color-background-alt) 100%
+  );
+  /* Idéalement ici une image de fond avec un overlay */
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+/* Animations simples */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-in-delay {
+  animation: fadeIn 1s ease-out 0.3s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-in-delay-2 {
+  animation: fadeIn 1s ease-out 0.6s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- ABOUT SECTION --- */
+.about-section {
+  padding: 100px 0;
+  background-color: var(--color-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-top: 15px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: var(--color-background-alt);
+  border-radius: 4px;
+  /* Ici on mettrait une vraie image */
+}
+
+/* --- SERVICES SECTION --- */
+.services-section {
+  padding: 100px 0;
+  background-color: var(--color-background);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--color-white);
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(46, 26, 22, 0.1);
+  border-color: var(--color-accent);
+}
+
+.service-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--color-accent);
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-family: var(--font-heading);
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+  padding: 80px 0;
+  background-color: var(--color-text-main); /* Fond sombre pour le contraste */
+  color: var(--color-background);
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: var(--color-background); /* Titre clair */
+  margin-bottom: 20px;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 40px;
+  text-align: left; /* Align text to left for better side-by-side look */
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to start */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Stack info vertically */
+  gap: 15px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.contact-item span {
+  margin-right: 10px;
+}
+
+.qr-code-container {
+  /* margin-top removed as it's now side-by-side */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-code {
+  width: 180px; /* Slightly larger */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--color-background);
+}
+
+.qr-label {
+  font-size: 0.9rem;
+  color: var(--color-background);
+  opacity: 0.8;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: #1a0f0c; /* Encore plus sombre que l'espresso */
+  color: var(--color-text-muted);
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- BURGER MENU --- */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text-main);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile Nav */
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 100vh; /* Full height */
+    top: 0; /* Start from top */
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center items vertically */
+    width: 100%; /* Full width */
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    z-index: 999; /* Below burger but above content */
+    padding-top: 60px; /* Space for header */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    opacity: 0;
+    margin: 20px 0;
+  }
+
+  .burger {
+    display: block;
+    z-index: 1001; /* Above everything */
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  /* Animate Links */
+  .nav-active li {
+    animation: navLinkFade 0.5s ease forwards 0.3s;
+  }
+
+  /* Burger Animation */
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .contact-content {
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
